@@ -22,4 +22,8 @@ pub mod multisig {
     pub fn create_multisig(ctx: Context<CreateMultisig>, owners: Vec<Pubkey>, threshold: u64) -> Result<()> {
         create_multisig::handler(ctx, owners, threshold)
     }
+
+    pub fn propose_transaction(ctx: Context<ProposeTransaction>, to: Pubkey, lamports: u64) -> Result<()> {
+        propose_transaction::handler(ctx, to, lamports)
+    }
 }
