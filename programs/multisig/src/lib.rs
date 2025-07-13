@@ -18,4 +18,8 @@ pub mod multisig {
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
         initialize::handler(ctx)
     }
+
+    pub fn create_multisig(ctx: Context<CreateMultisig>, owners: Vec<Pubkey>, threshold: u64) -> Result<()> {
+        create_multisig::handler(ctx, owners, threshold)
+    }
 }
