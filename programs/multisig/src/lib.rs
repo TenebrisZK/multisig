@@ -26,4 +26,8 @@ pub mod multisig {
     pub fn approve_transaction(ctx: Context<ApproveTransaction>) -> Result<()> {
         approve_transaction::handler(ctx)
     }
+
+    pub fn execute_transaction(ctx: Context<ExecuteTransaction>) -> Result<()> {
+        execute_transaction::handler(ctx)
+    }
 }

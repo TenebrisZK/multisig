@@ -3,7 +3,7 @@ use crate::constants::MAX_WALLET_OWNERS;
 
 #[account]
 #[derive(InitSpace)]
-pub struct Transaction {
+pub struct TransactionInfo {
     pub multisig: Pubkey,
     pub to: Pubkey,
     pub lamports: u64,

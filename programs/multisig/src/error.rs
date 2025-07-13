@@ -10,4 +10,6 @@ pub enum MultisigError {
     AlreadyExecuted,
     #[msg("This account has already approved the transaction.")]
     AlreadyApproved,
+    #[msg("Not enough approvals to execute the transaction.")]
+    NotEnoughApprovals,
 }

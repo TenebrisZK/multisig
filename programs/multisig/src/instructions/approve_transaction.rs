@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 use crate::state::multisig::Multisig;
-use crate::state::transaction::Transaction;
+use crate::state::transaction::TransactionInfo;
 use crate::error::MultisigError;
 
 pub fn handler(ctx: Context<ApproveTransaction>) -> Result<()> {
@@ -26,7 +26,7 @@ pub struct ApproveTransaction<'info> {
     #[account(mut)]
     pub signer: Signer<'info>,
     #[account(mut)]
-    pub transaction: Account<'info, Transaction>,
+    pub transaction: Account<'info, TransactionInfo>,
     #[account(mut)]
     pub multisig: Account<'info, Multisig>,
 }

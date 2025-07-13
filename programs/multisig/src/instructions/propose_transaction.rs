@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 use crate::state::multisig::Multisig;
-use crate::state::transaction::Transaction;
+use crate::state::transaction::TransactionInfo;
 
 pub fn handler(
     ctx: Context<ProposeTransaction>,
@@ -20,8 +20,8 @@ pub fn handler(
 
 #[derive(Accounts)]
 pub struct ProposeTransaction<'info> {
-    #[account(init, payer = proposer, space = Transaction::INIT_SPACE)]
-    pub transaction: Account<'info, Transaction>,
+    #[account(init, payer = proposer, space = TransactionInfo::INIT_SPACE)]
+    pub transaction: Account<'info, TransactionInfo>,
     #[account(mut)]
     pub multisig: Account<'info, Multisig>,
     #[account(mut)]
